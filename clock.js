@@ -22,6 +22,14 @@ if(curHour > 12){
 }
 
 //determine and set positions
-domSecond.style.transform = "rotate("+findPosition(curSecond, "second")+"deg)";
-domMinute.style.transform = "rotate("+findPosition(curMinute, "minute")+"deg)";
-domHour.style.transform = "rotate("+findPosition(curHour, "hour")+"deg)";
+function tick(){
+	curTime = new Date();
+	curSecond = curTime.getSeconds();
+	curMinute = curTime.getMinutes();
+	curHour = curTime.getHours();
+	domSecond.style.transform = "rotate("+findPosition(curSecond, "second")+"deg)";
+	domMinute.style.transform = "rotate("+findPosition(curMinute, "minute")+"deg)";
+	domHour.style.transform = "rotate("+findPosition(curHour, "hour")+"deg)";	
+}
+
+setInterval(tick, 1000);
