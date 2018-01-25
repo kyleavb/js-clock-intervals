@@ -2,10 +2,10 @@
 var domSecond = document.getElementById("second");
 var domMinute = document.getElementById("minute");
 var domHour = document.getElementById("hour");
-var curTime = new Date();
-var curSecond = curTime.getSeconds();
-var curMinute = curTime.getMinutes();
-var curHour = curTime.getHours();
+var curTime;
+var curSecond;
+var curMinute;
+var curHour;
 
 //pass current time and type and return degree change
 function findPosition(num, type){
