@@ -6,7 +6,6 @@ var curTime;
 var curSecond;
 var curMinute;
 var curHour;
-
 //pass current time and type and return degree change
 function findPosition(num, type){
 	if(type === "second" || type ==="minute"){
@@ -15,11 +14,8 @@ function findPosition(num, type){
 		return(num * 30);
 	}
 }
-
-
-
-//determine and set positions
-function tick(){
+//Run Interval, annon func to get times and set positions
+setInterval(function(){
 	curTime = new Date();
 	curSecond = curTime.getSeconds();
 	curMinute = curTime.getMinutes();
@@ -31,6 +27,4 @@ function tick(){
 	domSecond.style.transform = "rotate("+findPosition(curSecond, "second")+"deg)";
 	domMinute.style.transform = "rotate("+findPosition(curMinute, "minute")+"deg)";
 	domHour.style.transform = "rotate("+findPosition(curHour, "hour")+"deg)";	
-}
-
-setInterval(tick, 1000);
+}, 1000);
