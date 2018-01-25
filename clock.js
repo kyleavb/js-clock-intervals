@@ -16,10 +16,7 @@ function findPosition(num, type){
 	}
 }
 
-//change hour to 12-hour formate
-if(curHour > 12){
-	curHour -= 12;
-}
+
 
 //determine and set positions
 function tick(){
@@ -27,6 +24,10 @@ function tick(){
 	curSecond = curTime.getSeconds();
 	curMinute = curTime.getMinutes();
 	curHour = curTime.getHours();
+	//change hour to 12-hour formate
+	if(curHour > 12){
+		curHour -= 12;
+	}
 	domSecond.style.transform = "rotate("+findPosition(curSecond, "second")+"deg)";
 	domMinute.style.transform = "rotate("+findPosition(curMinute, "minute")+"deg)";
 	domHour.style.transform = "rotate("+findPosition(curHour, "hour")+"deg)";	
